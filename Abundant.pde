@@ -30,6 +30,19 @@ int suma_divisores(int n) {
 return x;
 }
 
+boolean abundant (int n) { 
+  boolean t;
+  int x= suma_divisores (n);
+  if (n<x){
+    t=true;
+  }else{
+    t=false;
+  }
+  if(n==0||n==1||n==2)
+  t=false;
+  return t; 
+} 
+
 void setup() {
   int n=12;
   //Hallamos el numero de divisores
@@ -38,4 +51,6 @@ void setup() {
   println(encuentra_divisores(n));
   //Suma de los divisores
   println(suma_divisores(n));
+  //Miramos si un numero n es abundante
+  println(abundant(n));
  }
