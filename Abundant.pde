@@ -57,14 +57,32 @@ void Abundant_numbers(int n){
 
 void setup() {
   int n=12;
-  //Hallamos el numero de divisores
-  println(numero_divisores(n));
-  //Encontramos los divisores
-  println(encuentra_divisores(n));
-  //Suma de los divisores
-  println(suma_divisores(n));
-  //Miramos si un numero n es abundante
-  println(abundant(n));
-  //Imprimimos los primeros n numeros abundantes
+  int x = suma_divisores (n);
+  println("Abundant Numbers");
+  println("Respuestas dadas para n=");
+  println(n);
+  //Los n primeros numeros abundantes.
+  println("Los primeros n numeros abundantes son:");
   Abundant_numbers(n);
+  /*Determina si n es un numero abundante
+  Ademas le otorga datos como:
+  Los divisores.
+  La suma de los divisores.
+  La abundancia. 
+  */
+  println("Es'n'un numero abundante?");
+  println("Rta//");
+  println(abundant(n));
+  println("Los divisores son:");
+  println(encuentra_divisores(n));
+  println("La suma de los divisores es de");
+  println(suma_divisores(n));
+  if(n<=x){
+    println("La abundancia es de ");
+    println(x-n);
+  }else{
+    println("EL numero n es mayor");
+    println(n-x);
+    println("unidades que la suma de sus divisores, por lo tanto, no es un numero abundante.");
+  }
  }
