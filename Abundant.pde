@@ -9,7 +9,7 @@ int numero_divisores (int n){
 }
 int [] encuentra_divisores (int n) { 
   int t = numero_divisores (n);
-  int [] d= new int[t]; 
+  int [] d= new int[t+1]; 
   int c = 0;
   for(int i=1;i<=(n/2);i++) {  
     if(n%i==0){ 
@@ -43,6 +43,18 @@ boolean abundant (int n) {
   return t; 
 } 
 
+void Abundant_numbers(int n){
+ int i=0;
+ int e=0;
+ while (e<=n-1){
+   if (abundant(i)==true){
+     println(i);
+     e++;
+   }
+   i++;
+ }
+}
+
 void setup() {
   int n=12;
   //Hallamos el numero de divisores
@@ -53,4 +65,6 @@ void setup() {
   println(suma_divisores(n));
   //Miramos si un numero n es abundante
   println(abundant(n));
+  //Imprimimos los primeros n numeros abundantes
+  Abundant_numbers(n);
  }
