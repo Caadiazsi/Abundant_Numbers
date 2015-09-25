@@ -63,7 +63,7 @@ int[] Abundant_numbers(int n){
   utilizando los primeros q numeros abundantes como radio*/
 void setup() {
   int n=10;
-  int m=20;
+  int m=8;
   int q=20;
   int x = suma_divisores (m);
   println("Abundant Numbers");
