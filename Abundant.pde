@@ -7,6 +7,7 @@ int numero_divisores (int n){
   }
   return t-1;
 }
+
 int [] encuentra_divisores (int n) { 
   int t = numero_divisores (n);
   int [] d= new int[t+1]; 
@@ -43,46 +44,61 @@ boolean abundant (int n) {
   return t; 
 } 
 
-void Abundant_numbers(int n){
- int i=0;
- int e=0;
- while (e<=n-1){
-   if (abundant(i)==true){
-     println(i);
-     e++;
+int[] Abundant_numbers(int n){
+ int [] a = new int [n];
+ int i = 0;
+ int y = 0;
+ while(i<=n-1){
+   if(abundant(y)==true){
+     a[i]=y;
+     i++;
    }
-   i++;
+   y++;
  }
+ return a;
 }
-
+//Utilize n para imprimir los primeros n numeros abundantes 
+//Utilize m para saber si m es un abundante
+/*Utilize q para decir cuantos circulos quiere imprimir,
+  utilizando los primeros q numeros abundantes como radio*/
 void setup() {
-  int n=12;
-  int x = suma_divisores (n);
+  int n=10;
+  int m=20;
+  int q=100;
+  int x = suma_divisores (m);
   println("Abundant Numbers");
   println("Respuestas dadas para n=");
   println(n);
   //Los n primeros numeros abundantes.
   println("Los primeros n numeros abundantes son:");
-  Abundant_numbers(n);
+  println(Abundant_numbers(n));
   /*Determina si n es un numero abundante
-  Ademas le otorga datos como:
+  Ademas le imprime los siguientes datos:
   Los divisores.
   La suma de los divisores.
   La abundancia. 
   */
-  println("Es'n'un numero abundante?");
+  println("Es'm'un numero abundante?");
+  println("Respuesta dadas para m=");
+  println(m);
   println("Rta//");
-  println(abundant(n));
+  println(abundant(m));
   println("Los divisores son:");
-  println(encuentra_divisores(n));
+  println(encuentra_divisores(m));
   println("La suma de los divisores es de");
-  println(suma_divisores(n));
-  if(n<=x){
+  println(suma_divisores(m));
+  if(m<=x){
     println("La abundancia es de ");
-    println(x-n);
+    println(x-m);
   }else{
-    println("EL numero n es mayor");
-    println(n-x);
+    println("EL numero m es mayor");
+    println(m-x);
     println("unidades que la suma de sus divisores, por lo tanto, no es un numero abundante.");
+  }
+  int[]e = Abundant_numbers(q);
+  size(700,700);
+  for (int k=q-1;k>=0;k--){
+    fill(map(e[k],0,e[q-1],0,255));
+    ellipse(width/2,height/2,map(e[k],0,e[q-1],0,width),map(e[k],0,e[q-1],0,height));
   }
  }
