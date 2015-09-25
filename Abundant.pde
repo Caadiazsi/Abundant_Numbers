@@ -95,6 +95,7 @@ void setup() {
     println(m-x);
     println("unidades que la suma de sus divisores, por lo tanto, no es un numero abundante.");
   }
+   println ("Jonatan Campo - Camilo Diaz - Manuel Miranda");
   int[]e = Abundant_numbers(q);
   size(700,700);
   for (int k=q-1;k>=0;k--){
