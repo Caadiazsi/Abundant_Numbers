@@ -64,7 +64,7 @@ int[] Abundant_numbers(int n){
 void setup() {
   int n=10;
   int m=20;
-  int q=100;
+  int q=20;
   int x = suma_divisores (m);
   println("Abundant Numbers");
   println("Respuestas dadas para n=");
@@ -101,4 +101,4 @@ void setup() {
     fill(map(e[k],0,e[q-1],0,255));
     ellipse(width/2,height/2,map(e[k],0,e[q-1],0,width),map(e[k],0,e[q-1],0,height));
   }
- }
+}
